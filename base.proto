@@ -6,7 +6,7 @@ import "google/protobuf/any.proto";
 
 // 通用返回结果
 message Result {
-    fixed32 code = 1; //结果代码
+    sfixed32 code = 1; //结果代码
     string msg = 2; //结果消息
     string tag = 3; //结果标签
     google.protobuf.Any data = 4; //结果数据
