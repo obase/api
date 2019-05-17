@@ -1,13 +1,62 @@
 syntax = "proto3";
-package obase.proto;
-option go_package = "github.com/obase/go/proto/base";
 
-import "google/protobuf/any.proto";
+package api;
 
-// 通用返回结果
-message Result {
-    sfixed32 code = 1; //结果代码
-    string msg = 2; //结果消息
-    string tag = 3; //结果标签
-    google.protobuf.Any data = 4; //结果数据
+import "google/protobuf/descriptor.proto";
+
+message PackFunc {
+    string pack = 1;
+    string func = 2;
+}
+
+message Group {
+    string path = 1;
+    string desc = 2;
+}
+
+enum Body {
+    JSON = 0; // BODY is json
+    FORM = 1; // BODY is form
+}
+
+message Handle {
+    string path = 1;
+    string desc = 2;
+    Body body = 3;
+}
+
+message Socket {
+    string path = 1;
+    string desc = 2;
+}
+
+message Field {
+    string json = 1;
+    string bson = 2;
+    bool file = 3;
+}
+
+// extend from 90000
+extend google.protobuf.FileOptions {
+    repeated PackFunc server_option = 90001;
+    repeated PackFunc middle_filter = 90002;
+}
+
+// extend from 90000
+extend google.protobuf.FieldOptions {
+    Field field = 90001;
+}
+
+// extend from 90000
+extend google.protobuf.ServiceOptions {
+    Group group = 90001;
+    repeated PackFunc group_filter = 90002;
+}
+
+// extend from 90000
+extend google.protobuf.MethodOptions {
+    Handle handle = 90001;
+    repeated PackFunc handle_filter = 90002;
+    Socket socket = 90003;
+    repeated PackFunc socket_filter = 90004;
 }
