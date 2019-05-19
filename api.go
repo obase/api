@@ -1,6 +1,7 @@
 package api
 
 import (
+	"context"
 	"encoding/json"
 )
 
@@ -28,3 +29,6 @@ func (rsp *Response) Error() string {
 	bs, _ := json.Marshal(rsp)
 	return string(bs)
 }
+
+/*日志适配方法*/
+type LoggerFunc func(ctx context.Context, format string, args ...interface{})
