@@ -1,7 +1,6 @@
 package api
 
 import (
-	"context"
 	"encoding/json"
 )
 
@@ -16,7 +15,7 @@ const (
 	EXECUTE_SERVICE_ERROR = 603 // 执行service失败
 )
 
-const PBX_PACK_PATH = "github.com/obase/go/pbx"
+const APIX_PACK_PATH = "github.com/obase/apix"
 
 type Response struct {
 	Code int         `json:"code" bson:"code"`                     // 响应代码
@@ -29,6 +28,3 @@ func (rsp *Response) Error() string {
 	bs, _ := json.Marshal(rsp)
 	return string(bs)
 }
-
-/*日志适配方法*/
-type LoggerFunc func(ctx context.Context, format string, args ...interface{})
