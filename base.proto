@@ -60,3 +60,7 @@ extend google.protobuf.MethodOptions {
     Socket socket = 90003;
     repeated PackFunc socket_filter = 90004;
 }
+
+message Void{
+
+}
