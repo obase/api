@@ -4,11 +4,10 @@
 package x
 
 import (
-	"fmt"
-	"github.com/golang/protobuf/proto"
-	"github.com/golang/protobuf/protoc-gen-go/descriptor"
-	"github.com/obase/apix"
-	"math"
+	fmt "fmt"
+	proto "github.com/golang/protobuf/proto"
+	descriptor "github.com/golang/protobuf/protoc-gen-go/descriptor"
+	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -48,11 +47,11 @@ func (Body) EnumDescriptor() ([]byte, []int) {
 }
 
 type PackFunc struct {
-	Pack                 string   `protobuf:"bytes,1,opt,name=pack,proto3" json:"pack,omitempty" bson:"pack"`
-	Func                 string   `protobuf:"bytes,2,opt,name=func,proto3" json:"func,omitempty" bson:"func"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
-	XXX_unrecognized     []byte   `json:"-" bson:"-"`
-	XXX_sizecache        int32    `json:"-" bson:"-"`
+	Pack                 string   `protobuf:"bytes,1,opt,name=pack,proto3" json:"pack,omitempty"`
+	Func                 string   `protobuf:"bytes,2,opt,name=func,proto3" json:"func,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
 }
 
 func (m *PackFunc) Reset()         { *m = PackFunc{} }
@@ -95,11 +94,11 @@ func (m *PackFunc) GetFunc() string {
 }
 
 type Group struct {
-	Path                 string   `protobuf:"bytes,1,opt,name=path,proto3" json:"path,omitempty" bson:"path"`
-	Desc                 string   `protobuf:"bytes,2,opt,name=desc,proto3" json:"desc,omitempty" bson:"desc"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
-	XXX_unrecognized     []byte   `json:"-" bson:"-"`
-	XXX_sizecache        int32    `json:"-" bson:"-"`
+	Path                 string   `protobuf:"bytes,1,opt,name=path,proto3" json:"path,omitempty"`
+	Desc                 string   `protobuf:"bytes,2,opt,name=desc,proto3" json:"desc,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
 }
 
 func (m *Group) Reset()         { *m = Group{} }
@@ -142,12 +141,12 @@ func (m *Group) GetDesc() string {
 }
 
 type Handle struct {
-	Path                 string   `protobuf:"bytes,1,opt,name=path,proto3" json:"path,omitempty" bson:"path"`
-	Desc                 string   `protobuf:"bytes,2,opt,name=desc,proto3" json:"desc,omitempty" bson:"desc"`
-	Body                 Body     `protobuf:"varint,3,opt,name=body,proto3,enum=api.Body" json:"body,omitempty" bson:"body"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
-	XXX_unrecognized     []byte   `json:"-" bson:"-"`
-	XXX_sizecache        int32    `json:"-" bson:"-"`
+	Path                 string   `protobuf:"bytes,1,opt,name=path,proto3" json:"path,omitempty"`
+	Desc                 string   `protobuf:"bytes,2,opt,name=desc,proto3" json:"desc,omitempty"`
+	Body                 Body     `protobuf:"varint,3,opt,name=body,proto3,enum=api.Body" json:"body,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
 }
 
 func (m *Handle) Reset()         { *m = Handle{} }
@@ -197,11 +196,11 @@ func (m *Handle) GetBody() Body {
 }
 
 type Socket struct {
-	Path                 string   `protobuf:"bytes,1,opt,name=path,proto3" json:"path,omitempty" bson:"path"`
-	Desc                 string   `protobuf:"bytes,2,opt,name=desc,proto3" json:"desc,omitempty" bson:"desc"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
-	XXX_unrecognized     []byte   `json:"-" bson:"-"`
-	XXX_sizecache        int32    `json:"-" bson:"-"`
+	Path                 string   `protobuf:"bytes,1,opt,name=path,proto3" json:"path,omitempty"`
+	Desc                 string   `protobuf:"bytes,2,opt,name=desc,proto3" json:"desc,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
 }
 
 func (m *Socket) Reset()         { *m = Socket{} }
@@ -244,12 +243,12 @@ func (m *Socket) GetDesc() string {
 }
 
 type Field struct {
-	Json                 string   `protobuf:"bytes,1,opt,name=json,proto3" json:"json,omitempty" bson:"json"`
-	Bson                 string   `protobuf:"bytes,2,opt,name=bson,proto3" json:"bson,omitempty" bson:"bson"`
-	File                 bool     `protobuf:"varint,3,opt,name=file,proto3" json:"file,omitempty" bson:"file"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
-	XXX_unrecognized     []byte   `json:"-" bson:"-"`
-	XXX_sizecache        int32    `json:"-" bson:"-"`
+	Json                 string   `protobuf:"bytes,1,opt,name=json,proto3" json:"json,omitempty"`
+	Bson                 string   `protobuf:"bytes,2,opt,name=bson,proto3" json:"bson,omitempty"`
+	File                 bool     `protobuf:"varint,3,opt,name=file,proto3" json:"file,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
 }
 
 func (m *Field) Reset()         { *m = Field{} }
@@ -299,9 +298,9 @@ func (m *Field) GetFile() bool {
 }
 
 type Void struct {
-	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
-	XXX_unrecognized     []byte   `json:"-" bson:"-"`
-	XXX_sizecache        int32    `json:"-" bson:"-"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
 }
 
 func (m *Void) Reset()         { *m = Void{} }
@@ -464,12 +463,3 @@ var fileDescriptor_5e7c1a25b3c76cdf = []byte{
 	0x74, 0xb9, 0x1b, 0xf7, 0xeb, 0xf3, 0xc3, 0x7f, 0x2b, 0x89, 0x8d, 0xd8, 0x37, 0x7f, 0x03, 0x00,
 	0x00, 0xff, 0xff, 0x1e, 0xa6, 0xd0, 0xa8, 0x77, 0x04, 0x00, 0x00,
 }
-
-func init_github_com_obase_api_x_proto(server *apix.Server) {
-}
-
-/* autogen service implement
-import (
-	"context"
-)
-*/
