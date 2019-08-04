@@ -15,8 +15,6 @@ const (
 	EXECUTE_SERVICE_ERROR = 603 // 执行service失败
 )
 
-const APIX_PACK_PATH = "github.com/obase/apix"
-
 type Response struct {
 	Code int         `json:"code" bson:"code"`                     // 响应代码
 	Msg  string      `json:"msg,omitempty" bson:"msg,omitempty"`   // 响应消息
