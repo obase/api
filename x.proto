@@ -34,7 +34,8 @@ message Socket {
 message Field {
     string json = 1;
     string bson = 2;
-    bool file = 3;
+    string yaml = 3;
+    bool file = 4;
 }
 
 // extend from 90000
