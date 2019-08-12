@@ -16,13 +16,45 @@ const (
 )
 
 type Response struct {
-	Code int         `json:"code" bson:"code"`                     // 响应代码
-	Msg  string      `json:"msg,omitempty" bson:"msg,omitempty"`   // 响应消息
-	Data interface{} `json:"data,omitempty" bson:"data,omitempty"` // 响应数据
-	Tag  string      `json:"tag,omitempty" bson:"tag,omitempty"`   // 响应标签
+	Code int         `json:"code" bson:"code" yaml:"code"`                               // 响应代码
+	Msg  string      `json:"msg,omitempty" bson:"msg,omitempty" yaml:"msg,omitempty"`    // 响应消息
+	Data interface{} `json:"data,omitempty" bson:"data,omitempty" yaml:"data,omitempty"` // 响应数据
+	Tag  string      `json:"tag,omitempty" bson:"tag,omitempty" yaml:"tag,omitempty"`    // 响应标签
 }
 
 func (rsp *Response) Error() string {
 	bs, _ := json.Marshal(rsp)
 	return string(bs)
+}
+
+func SuccessResponse(data interface{}, tag ...string) *Response {
+	rsp := &Response{
+		Data: data,
+	}
+	if len(tag) > 0 {
+		rsp.Tag = tag[0]
+	}
+	return rsp
+}
+
+func FailureResponse(code int, msg string, tag ...string) *Response {
+	rsp := &Response{
+		Code: code,
+		Msg:  msg,
+	}
+	if len(tag) > 0 {
+		rsp.Tag = tag[0]
+	}
+	return rsp
+}
+
+func Error(err error, tag ...string) *Response {
+	rsp := &Response{
+		Code: UNKNOWN,
+		Msg:  err.Error(),
+	}
+	if len(tag) > 0 {
+		rsp.Tag = tag[0]
+	}
+	return rsp
 }
